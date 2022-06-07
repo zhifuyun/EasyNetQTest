@@ -37,12 +37,20 @@ namespace Publisher
                 //     Console.WriteLine($"{i} 已发送");
                 // });
 
+                //for (int i = 1; i <= 100; i++)
+                //{
+                //    var msg = new TextMessage { Text = i.ToString() };
+                //  var t= bus.SendReceive.SendAsync("myqueue", msg);
+                //  t.Wait();
+                //    Console.WriteLine($"{i} 已发送");
+                //}
+
                 for (int i = 1; i <= 100; i++)
                 {
                     var msg = new TextMessage { Text = i.ToString() };
-                  var t= bus.SendReceive.SendAsync("myqueue", msg);
-                  t.Wait();
-                    Console.WriteLine($"{i} 已发送");
+                    var t = bus.Rpc.Request<TextMessage, TextMessage>(msg);
+                    Console.WriteLine($"{t.Text} 已发送");
+
                 }
 
 
