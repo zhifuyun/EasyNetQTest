@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChannelDefaults.cs" />
+    <Compile Include="DouYinModel.cs" />
+    <Compile Include="OrderDefaults.cs" />
     <Compile Include="TextMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
